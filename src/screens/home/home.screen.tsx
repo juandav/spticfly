@@ -9,6 +9,7 @@ import { routes } from './home.routes'
 import RouteWithSubRoutes from '../../components/shared/Routes'
 
 export default function Home() {
+
   return (
     <View>
       <Text> Home Route </Text>

@@ -1,5 +1,8 @@
 import styled from 'styled-components/native'
-import { ImageBackground, Image } from 'react-native'
+import { 
+  ImageBackground, 
+  Image 
+} from 'react-native'
 import {  
   Text as TextKitten, 
   Button as ButtonKitten
