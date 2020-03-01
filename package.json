@@ -1,0 +1,46 @@
+{
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios",
+    "build": "expo build",
+    "web": "expo start --web",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@eva-design/eva": "1.4.0",
+    "@react-native-community/async-storage": "^2.0.0-rc.2",
+    "@reduxjs/toolkit": "1.2.5",
+    "@types/node": "13.7.7",
+    "@ui-kitten/components": "^4.4.1",
+    "expo": "36.0.2",
+    "expo-asset": "8.0.0",
+    "react": "16.13.0",
+    "react-dom": "16.13.0",
+    "react-native": "0.61.5",
+    "react-native-gesture-handler": "1.5.0",
+    "react-native-reanimated": "1.4.0",
+    "react-native-screens": "2.0.0-alpha.12",
+    "react-native-svg": "9.13.3",
+    "react-native-unimodules": "0.7.0",
+    "react-native-web": "0.11.7",
+    "react-router-dom": "5.1.2",
+    "react-router-native": "5.1.2",
+    "redux-observable": "1.2.0",
+    "rxjs": "6.5.4",
+    "styled-components": "5.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "7.8.6",
+    "@types/react": "16.9.23",
+    "@types/react-native": "0.61.17",
+    "babel-preset-expo": "8.0.0",
+    "jest-expo": "36.0.1",
+    "metro-react-native-babel-preset": "0.58.0",
+    "typescript": "3.8.3"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "private": true
+}
