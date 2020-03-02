@@ -6,7 +6,8 @@ const Footer = ({currentSong}) => {
     <React.Fragment>
       <Player song={{
         title: currentSong.title || 'Title',
-        artist: currentSong.artist || 'Artist'
+        artist: currentSong.artist || 'Artist',
+        url: currentSong.url
       }}/>
     </React.Fragment>
   )

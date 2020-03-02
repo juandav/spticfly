@@ -57,8 +57,7 @@ function Home({ data, setCurrentSong, current_song }) {
     outputRange: [0, 1],
     extrapolate: 'clamp'
   })
-  
-  console.log(data)
+  // console.log(current_song)
   return (
     loaded && (
       <View style={gStyle.container}>
@@ -96,14 +95,14 @@ function Home({ data, setCurrentSong, current_song }) {
                     <LineItemSong
                       active={true}
                       key={item.track.id}
-                      onPress={song => setCurrentSong(song)}
+                      onPress={setCurrentSong}
                       songData={{
                         album: item.track.album.name,
                         artist: item.track.artists[0].name,
                         length: item.track.duration_ms,
                         image: item.track.album.images[item.track.album.images.length - 1].url,
                         title: item.track.name,
-                        url: item.track.preview_url,
+                        url: data[0].track.preview_url + '.mp3',
                         release: item.track.release_date
                       }}
                     />
@@ -264,8 +263,6 @@ const styles = StyleSheet.create({
     ...gStyle.textSpotifyBold18,
     color: colors.white
   },
-
-
 
   modalContainer: {
     justifyContent: 'center',

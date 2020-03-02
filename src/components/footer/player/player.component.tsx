@@ -10,6 +10,10 @@ import { FontAwesome } from '@expo/vector-icons'
 import { Container } from './player.style'
 import { colors, device, gStyle } from '../../../constants'
 
+import * as FileSystem from 'expo-file-system'
+import { Audio } from 'expo-av'
+
+
 class Player extends React.Component {
   constructor(props) {
     super(props);
@@ -34,6 +38,33 @@ class Player extends React.Component {
       paused: !prev.paused
     }));
   }
+
+  async _onPressPlaySound() {
+    const { song } = this.props
+    try {
+    //sound uri: https://p.scdn.co/mp3-preview/9477b2075a943660c3bf2146149585430723a440?cid=f1aeb9af575e45aca038e5bec3e380c9.mp3
+    //console.log(soundUri.url)
+    const soundUri = song.url
+    const arr = soundUri.toString().split("/")
+    const filename = arr[arr.length-1] + '.mp3'
+    console.log(`uri for sound: ${soundUri}`)
+
+    FileSystem.downloadAsync(soundUri, FileSystem.documentDirectory + filename)
+      .then(({ uri })=>{
+        console.log("finishing", uri)
+      })
+      .catch(error=>{
+        console.error(error)
+      })  
+   
+     const sound = new Audio.Sound()
+     
+      await sound.loadAsync({ uri: FileSystem.documentDirectory+filename }) 
+      await sound.playAsync()
+     } catch (error) {
+      console.error(error.message)
+     }
+   }
 
   render() {
     const { song } = this.props;
@@ -64,7 +95,10 @@ class Player extends React.Component {
         <TouchableOpacity
           activeOpacity={gStyle.activeOpacity}
           hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
-          onPress={this.togglePlay}
+          onPress={() => {
+            this._onPressPlaySound()
+            this.togglePlay()
+          }}
           style={styles.containerIcon}
         >
           <FontAwesome color={colors.white} name={iconPlay} size={28} />

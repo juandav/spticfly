@@ -29,6 +29,8 @@ const Playlist = ({
     fetchTracks(urlTracks)
   }
 
+  //console.log(error)
+
   return (
     loading
     ? <Text>Cargando...</Text>
