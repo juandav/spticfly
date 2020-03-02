@@ -1,3 +1,3 @@
-import Playlist from './playlist.component'
+import Playlist from './playlist.container'
 
 export { Playlist } 

@@ -11,6 +11,7 @@ import {
   SPOTIFY_AUTHORIZE_ENDPOINT,
   SPOTIFY_AUTHORIZE_ENDPOINT_NATIVE
 } from './signin.constants'
+import { AsyncStorage } from 'react-native'
 
 export default function Signin() {
   const redirectUrl = window.location? `${window.location}`: AuthSession.getRedirectUrl()
@@ -45,6 +46,7 @@ export default function Signin() {
       Linking.openURL(SPOTIFY_AUTHORIZE_ENDPOINT(redirectUrl))
     } else {
       let result = await AuthSession.startAsync({ authUrl: SPOTIFY_AUTHORIZE_ENDPOINT_NATIVE( redirectUrl )})
+      await AsyncStorage.setItem('@token', result['params']['access_token'])
       setSession(result['params']['access_token'])
     }
   }

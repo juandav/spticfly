@@ -10,8 +10,7 @@ export default function initStore (initialState) {
   const logger = createLogger({ collapsed: true })
   const reduxMiddleware = composeWithDevTools(
     applyMiddleware(
-      epicMiddleware,
-      logger
+      epicMiddleware
     ))
   const store = createStore(rootReducer, initialState, reduxMiddleware)
   epicMiddleware.run(rootEpic)

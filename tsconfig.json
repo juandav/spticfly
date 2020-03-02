@@ -8,8 +8,8 @@
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "allowJs": true,
-    "types": ["node"],
-    "include": ["assets/**/*", "src/**/*"],
-    "exclude": ["node_modules", "**/*.spec.ts"]
-  }
+    "types": ["node"]
+  },
+  "include": ["assets/**/*", "src/**/*"],
+  "exclude": ["node_modules", "**/*.spec.ts"]
 }
