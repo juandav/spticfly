@@ -25,7 +25,7 @@ import { Footer } from '../../components/footer'
 import { Playlist } from '../../components/playlist'
 
 
-function Home({ data }) {
+function Home({ data, setCurrentSong, current_song }) {
   const [loaded, setLoaded] = useState(false)
   const [visible, setVisible] = React.useState(false)
   const history = useHistory()
@@ -65,6 +65,7 @@ function Home({ data }) {
         <Header 
           handleLeftPress={() => history.push('/signin') }
           handleRightPress={() => setVisible(!visible)}
+          currentSong={current_song}
         />
         <Animated.ScrollView
           onScroll={Animated.event(
@@ -95,12 +96,15 @@ function Home({ data }) {
                     <LineItemSong
                       active={true}
                       key={item.track.id}
-                      onPress={() => console.log('change song')}
+                      onPress={song => setCurrentSong(song)}
                       songData={{
-                        album: '',
+                        album: item.track.album.name,
                         artist: item.track.artists[0].name,
-                        length: 7,
-                        title: item.track.name
+                        length: item.track.duration_ms,
+                        image: item.track.album.images[item.track.album.images.length - 1].url,
+                        title: item.track.name,
+                        url: item.track.preview_url,
+                        release: item.track.release_date
                       }}
                     />
                   )
@@ -127,7 +131,7 @@ function Home({ data }) {
           <View style={gStyle.spacer16} />
         </Animated.ScrollView>
 
-        <Footer />
+        <Footer currentSong={current_song} />
         
         <Modal
           backdropStyle={styles.backdrop}

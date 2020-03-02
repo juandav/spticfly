@@ -19,7 +19,8 @@ import { Artist } from './artist'
 
 export default function HeaderMenu({
   handleLeftPress,
-  handleRightPress
+  handleRightPress,
+  currentSong
 }) {
     const album = albums['Ex:Re']
     const scrollY = new Animated.Value(0)
@@ -49,7 +50,7 @@ export default function HeaderMenu({
           />
         </AppBarContainer>
       </Container>
-      <Artist />
+      <Artist currentSong={currentSong} />
     </>
   )
 }

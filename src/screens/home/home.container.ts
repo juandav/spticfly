@@ -1,14 +1,15 @@
 import { connect } from 'react-redux'
 import HomeScreen from './home.screen'
-import { fetchTracks } from '../../store/tracks/actions'
+import { fetchTracks, setCurrentSong } from '../../store/tracks/actions'
 
 const mapStateToProps = ({
-  tracks: { data, error, loading }
+  tracks: { data, error, loading, current_song }
 }) => ({
   data,
   error,
-  loading
+  loading,
+  current_song
 })
-const mapDispatchToProps = ({ fetchTracks })
+const mapDispatchToProps = ({ fetchTracks, setCurrentSong })
   
 export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

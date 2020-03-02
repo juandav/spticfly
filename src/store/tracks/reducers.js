@@ -20,6 +20,7 @@ const fetchTracksError = (state, error) => ({ ...state, error })
 const setTracksloading = (state, { payload: loading }) => ({ ...state, loading })
 const setCurrentSong = (state, { payload }) => {
   const current = update(state.current_song, { $set: payload })
+  console.log(current)
   return ({
     ...state,
     current_song: current

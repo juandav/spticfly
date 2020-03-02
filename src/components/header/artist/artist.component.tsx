@@ -14,8 +14,7 @@ import {
 import LinearGradient from '../../../components/LinearGradient'
 import albums from '../../../mockdata/albums'
 
-
-function Artist() {
+function Artist({ currentSong }) {
   const album = albums['Ex:Re']
   return (
     <View style={styles.containerFixed}>
@@ -23,16 +22,16 @@ function Artist() {
         <LinearGradient fill={album.backgroundColor} />
       </View>
       <View style={styles.containerImage}>
-        <Image source={images[album.image]} style={styles.image} />
+        <Image source={{uri: currentSong.image} || images[album.image]} style={styles.image} />
       </View>
       <View style={styles.containerTitle}>
         <Text ellipsizeMode="tail" numberOfLines={1} style={styles.title}>
-          {album.title}
+          {currentSong.title || album.title}
         </Text>
       </View>
       <View style={styles.containerAlbum}>
         <Text style={styles.albumInfo}>
-          {`Album by ${album.artist} · ${album.released}`}
+          {`Album by ${currentSong.artist || album.artist} · ${currentSong.release || album.released}`}
         </Text>
       </View>
     </View>
