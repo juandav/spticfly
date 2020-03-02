@@ -102,7 +102,7 @@ function Home({ data, setCurrentSong, current_song }) {
                         length: item.track.duration_ms,
                         image: item.track.album.images[item.track.album.images.length - 1].url,
                         title: item.track.name,
-                        url: data[0].track.preview_url + '.mp3',
+                        url: item.track.preview_url + '.mp3',
                         release: item.track.release_date
                       }}
                     />
