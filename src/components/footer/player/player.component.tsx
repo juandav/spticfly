@@ -44,8 +44,9 @@ class Player extends React.Component {
     try {
     //sound uri: https://p.scdn.co/mp3-preview/9477b2075a943660c3bf2146149585430723a440?cid=f1aeb9af575e45aca038e5bec3e380c9.mp3
     //console.log(soundUri.url)
-    const soundUri = song.url
-    const arr = soundUri.toString().split("/")
+    const soundUri = song.url || 'https://p.scdn.co/mp3-preview/9477b2075a943660c3bf2146149585430723a440?cid=f1aeb9af575e45aca038e5bec3e380c9.mp3'
+    if (soundUri) {
+        const arr = soundUri.toString().split("/")
     const filename = arr[arr.length-1] + '.mp3'
     console.log(`uri for sound: ${soundUri}`)
 
@@ -61,6 +62,9 @@ class Player extends React.Component {
      
       await sound.loadAsync({ uri: FileSystem.documentDirectory+filename }) 
       await sound.playAsync()
+
+    }
+    
      } catch (error) {
       console.error(error.message)
      }
