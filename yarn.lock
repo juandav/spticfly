@@ -7029,10 +7029,10 @@ union-value@^1.0.0:
     is-extendable "^0.1.1"
     set-value "^2.0.1"
 
-universal-rxjs-ajax@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/universal-rxjs-ajax/-/universal-rxjs-ajax-2.0.3.tgz#993a878033a4d2aaa93858d4d31c615940223078"
-  integrity sha512-b+cjdmn97VeYYTs0pfcxd5vCzY6qk6SiEJFRSHppUJBO5ORLxP2ky17urMGRIaVEaQMs+FA2cibH7Z80nCSGiQ==
+universal-rxjs-ajax@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/universal-rxjs-ajax/-/universal-rxjs-ajax-2.0.4.tgz#d410073a6ac7fac5bd6adc5f916036a8b604c929"
+  integrity sha512-UTZeEZaXjVq/TgQ/yV/6o4zZK3rtpV7E8s7iC25mpG1dQzp6bGhIzHslj3QZg7WYdwh+caWFyXv9KZKySu1xlA==
   dependencies:
     xhr2 "^0.2.0"
 
