@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@eva-design/eva": "1.4.0",
-    "@react-native-community/async-storage": "2.0.0-rc.2",
+    "@react-native-community/async-storage": "2.0.0-rc.3",
     "@reduxjs/toolkit": "1.2.5",
     "@types/node": "13.7.7",
     "@ui-kitten/components": "4.4.1",
