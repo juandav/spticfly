@@ -10,7 +10,7 @@
   "dependencies": {
     "@eva-design/eva": "1.4.0",
     "@react-native-community/async-storage": "2.0.0-rc.2",
-    "@reduxjs/toolkit": "1.2.5",
+    "@reduxjs/toolkit": "1.6.0",
     "@types/node": "13.7.7",
     "@ui-kitten/components": "4.4.1",
     "expo": "36.0.2",
