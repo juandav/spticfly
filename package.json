@@ -42,7 +42,7 @@
     "universal-rxjs-ajax": "2.0.3"
   },
   "devDependencies": {
-    "@babel/core": "7.8.6",
+    "@babel/core": "7.14.5",
     "@types/react": "16.9.23",
     "@types/react-native": "0.61.17",
     "babel-preset-expo": "8.0.0",
